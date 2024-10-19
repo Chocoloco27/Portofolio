@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Register</title>
+    <style>
+      body {
+        background-color: #f8ede3;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #a57e66;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .form-container input[type="text"],
+      .form-container input[type="email"],
+      .form-container input[type="password"],
+      .form-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-container input[type="submit"] {
+        background-color: #c5705d;
+        color: white;
+        cursor: pointer;
+      }
+
+      .form-container input[type="submit"]:hover {
+        opacity: 0.9;
+      }
+
+      .code-container {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tutorial Membuat Tabel Register</h2>
+    <h3>Berikut ini merupakan contoh form yang akan kita buat</h3>
+
+    <div class="form-container">
+      <form action="#" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+
+    <h3>Penjelasan Syntax Form HTML:</h3>
+    <div class="code-container">
+      <pre><code>
+&lt;form action="#" method="POST"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" required&gt;
+
+    &lt;input type="submit" value="Register"&gt;
+&lt;/form&gt;
+        </code></pre>
+    </div>
+
+    <h3>Penjelasan Elemen Form:</h3>
+    <ul>
+      <li>
+        <strong>&lt;form&gt;</strong>: Elemen utama yang digunakan untuk membuat
+        form. Atribut <code>action</code> menentukan URL yang akan menerima data
+        yang di-submit, dan <code>method</code> menentukan metode pengiriman
+        data (GET atau POST).
+      </li>
+      <li>
+        <strong>&lt;label&gt;</strong>: Digunakan untuk memberikan label pada
+        elemen input. Menggunakan atribut <code>for</code> untuk menghubungkan
+        label dengan elemen input.
+      </li>
+      <li>
+        <strong>&lt;input&gt;</strong>: Elemen untuk mengambil input dari
+        pengguna. Tipe input dapat berupa <code>text</code>, <code>email</code>,
+        <code>password</code>, dan lainnya.
+      </li>
+      <li>
+        <strong>&lt;input type="submit"&gt;</strong>: Tombol yang digunakan
+        untuk mengirim data dari form.
+      </li>
+    </ul>
+  </body>
+</html>
