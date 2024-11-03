@@ -13,303 +13,330 @@
     <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>Tutorial Membuat Form HTML</title>
+    <title>Tutorial Membuat Form Login</title>
     <style>
-      /* Pengaturan tampilan body agar form berada di tengah halaman */
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
+        margin: 0;
+        padding: 0;
       }
 
-      h4 {
-        color: #a57e66;
-        padding-left: 20px;
-        text-align: left;
-        width: 100%;
-      }
-
-      /* Pengaturan container judul */
-      .title-container {
+      h2 {
         text-align: center;
-        margin-bottom: 20px;
-      }
-
-      /* Pengaturan judul utama */
-      .title-container h1 {
-        margin: 0;
-        font-size: 2em;
+        padding-top: 50px;
         color: #a57e66;
       }
 
-      /* Pengaturan subjudul */
-      .title-container h3 {
-        margin: 0;
-        font-size: 1.2em;
-        color: #ceae98;
+      h3 {
+        text-align: center;
+        margin-top: 20px;
       }
 
-      /* Pengaturan container form login */
-      .login-container {
-        background-color: #ceae98;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      .form-container {
         max-width: 400px;
-        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #dfd3c3;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
-      /* Pengaturan judul form */
-      .login-container h2 {
-        margin-bottom: 20px;
-        text-align: center;
+      .form-group {
+        margin-bottom: 15px;
       }
 
-      /* Pengaturan input text dan password */
-      .login-container input[type="text"],
-      .login-container input[type="password"] {
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"] {
         width: 100%;
         padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
+        border: 1px solid #ceae98;
         border-radius: 4px;
       }
 
-      /* Pengaturan tombol submit dan reset */
-      .login-container input[type="submit"],
-      .login-container input[type="reset"] {
-        width: 30%;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        background-color: #b15945;
-        color: white;
-        cursor: pointer;
-        margin-top: 10px;
-      }
-
-      /* Gaya untuk tombol Register */
-      .register-btn {
+      /* Button Group Login, Reset, dan Register */
+      .form-container button {
         width: 30%;
         padding: 8px;
         border: none;
         border-radius: 4px;
-        background-color: #b15945; /* Warna sama dengan tombol lainnya */
+        background-color: #b15945;
         color: white;
         text-align: center;
-        text-decoration: none; /* Menghilangkan garis bawah */
-        display: inline-block; /* Agar tampil sebaris dengan tombol lainnya */
         cursor: pointer;
         margin-top: 0px;
       }
 
-      /* Efek hover saat tombol diklik */
-      .login-container input[type="submit"]:hover,
-      .login-container input[type="reset"]:hover,
-      .register-btn:hover {
-        opacity: 0.9;
+      .form-container button:hover {
+        background-color: #c5705d;
       }
 
-      /* Container untuk penjelasan tutorial */
-      .tutorial-container {
-        margin-top: 20px;
-        background-color: #e9ecef;
-        padding: 15px;
-        border-radius: 5px;
-        max-width: 400px;
+      /* Button Download */
+      .nav-button .btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #efefef;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .nav-button .btn:hover {
+        background-color: #a0574b;
+        color: rgb(255, 255, 255);
+      }
+
+      /* Styling untuk scroll box */
+      .scroll-box {
         width: 100%;
-        margin-left: 20px; /* Menambahkan margin kiri untuk menggeser ke kiri */
-      }
-
-      /* Pengaturan kotak penjelasan */
-      .info-box {
+        max-width: 600px;
+        height: 250px;
+        border: 1px solid #ceae98;
+        padding: 10px;
         background-color: #dfd3c3;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-        width: 48%;
-        display: inline-block;
-        vertical-align: top;
+        overflow-y: auto;
+        margin: 20px auto;
       }
 
-      /* Mengatur warna dan ukuran teks dalam kotak penjelasan */
-      .info-box strong {
-        color: #353535;
-        font-size: 1.1em;
-      }
-
-      .info-box p {
-        margin: 5px 0;
-        color: #353535;
-        font-size: 0.9em;
-      }
-
-      /* Container kotak penjelasan */
-      .container {
+      /* Styling untuk kotak penjelasan syntax */
+      .syntax-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        margin: 20px auto;
         max-width: 1000px;
-        margin: auto;
-        margin-left: 20px; /* Menambahkan margin kiri untuk menggeser konten ke kiri */
+      }
+
+      .syntax-box {
+        border: 1px solid #ceae98;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #dfd3c3;
+        margin: 10px;
+        width: 45%; /* Lebar masing-masing kotak penjelasan */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi */
+      }
+
+      /* Efek saat hover */
+      .syntax-box:hover {
+        transform: scale(1.02); /* Membesar sedikit saat dihover */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Menambah bayangan saat dihover */
+      }
+
+      /* Responsive untuk tampilan layar kecil */
+      @media (max-width: 600px) {
+        .form-container {
+          width: 90%;
+        }
+        .info-box,
+        .syntax-box {
+          width: 90%;
+        }
+        .syntax-container {
+          flex-direction: column; /* Ganti ke kolom pada layar kecil */
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Container untuk judul dan subjudul -->
-    <div class="title-container">
-      <h1>Tutorial Membuat Form HTML</h1>
-      <h3>Berikut ini merupakan contoh form yang akan kita buat</h3>
-    </div>
-
-    <!-- Container utama untuk form login -->
-    <div class="login-container">
-      <h2>Login</h2>
-      <!-- Form login, method POST digunakan untuk mengirim data secara aman -->
-      <form action="/login" method="POST">
-        <!-- Input username -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
-        <!-- Input password -->
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <!-- Tombol submit dan reset -->
-        <div class="button-group">
-          <input type="submit" value="Login" />
-          <input type="reset" value="Reset" />
-          <a href="register.html" class="register-btn">Register</a>
-        </div>
-      </form>
-    </div>
-
-    <br />
-    <h4>Penjelasan Syntax CSS dan Tag HTML pada Form :</h4>
-
-    <!-- Tutorial Section dengan kotak penjelasan -->
     <div class="container">
-      <div class="info-box">
-        <strong>border-collapse:</strong>
-        <p>Menghilangkan spasi antar garis sel agar lebih rapi.</p>
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Form Login</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="#home" class="nav-link active-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#about" class="nav-link">About</a>
+              <div class="circle"></div>
+            </li>
+
+            <li class="nav_list">
+              <a href="#projects" class="nav-link">Projects</a>
+              <div class="circle"></div>
+            </li>
+
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <a
+            href="https://drive.google.com/uc?export=download&id=1WeiEiYqduCYh0tH2Y-249y_x9rO--Rtx"
+          >
+            <button class="btn">
+              Download CV <i class="uil uil-file-alt"></i>
+            </button>
+          </a>
+        </div>
+
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+      <!-- --------------- Form --------------- -->
+      <h2>Tutorial Membuat Form Login</h2>
+      <h3>Berikut ini adalah contoh form login yang akan kita buat:</h3>
+
+      <div class="form-container">
+        <form>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit">Login</button>
+          <button type="reset">Reset</button>
+          <button type="button" onclick="window.location.href='register.html';">
+            Register
+          </button>
+        </form>
       </div>
 
+      <h3>Penjelasan Syntax HTML:</h3>
       <div class="info-box">
-        <strong>background-color:</strong>
-        <p>
-          Memberi warna latar belakang untuk membedakan bagian header dan isi
-          tabel.
-        </p>
+        <h3>Berikut adalah penjelasan untuk setiap elemen dalam form login:</h3>
       </div>
 
-      <div class="info-box">
-        <strong>padding:</strong>
-        <p>
-          Memberikan ruang di dalam sel agar teks tidak terlalu menempel dengan
-          border.
-        </p>
+      <div class="syntax-container">
+        <div class="syntax-box">
+          <strong>&lt;form&gt;:</strong> Tag ini digunakan untuk mendefinisikan
+          form. Atribut <em>action</em> dapat ditambahkan untuk menentukan URL
+          yang akan dipanggil saat form dikirimkan.
+        </div>
+        <div class="syntax-box">
+          <strong>&lt;label&gt;:</strong> Tag ini digunakan untuk memberikan
+          label pada elemen input. Menggunakan atribut
+          <em>for</em> menghubungkan label dengan elemen input yang sesuai.
+        </div>
+        <div class="syntax-box">
+          <strong>&lt;input&gt;:</strong> Tag ini digunakan untuk membuat field
+          input. Atribut <em>type</em> menentukan jenis input, seperti
+          <em>text</em> atau <em>password</em>.
+        </div>
+        <div class="syntax-box">
+          <strong>&lt;button&gt;:</strong> Tag ini digunakan untuk membuat
+          tombol yang dapat diklik untuk mengirimkan form.
+        </div>
+        <div class="syntax-box">
+          <strong>type="reset":</strong> Tombol ini mengatur ulang semua input
+          dalam form ke nilai awalnya.
+        </div>
+        <div class="syntax-box">
+          <strong>type="button":</strong> Tombol ini dapat digunakan untuk
+          menambahkan fungsi JavaScript, seperti mengarahkan ke halaman lain.
+        </div>
       </div>
 
-      <div class="info-box">
-        <strong>text-align:</strong>
+      <h3>Contoh Syntax HTML untuk Form Login:</h3>
+      <div class="scroll-box">
         <p>
-          Mengatur posisi teks, misalnya center agar semua isi tabel berada di
-          tengah.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>display: flex;</strong>
-        <p>
-          Menjadikan elemen fleksibel sehingga tata letaknya bisa disesuaikan
-          dalam satu baris atau kolom.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>justify-content:</strong>
-        <p>
-          Mengatur bagaimana konten di dalam elemen fleksibel didistribusikan
-          secara horizontal, misalnya "center" untuk membuat konten di tengah.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>align-items:</strong>
-        <p>
-          Mengatur penyelarasan vertikal elemen fleksibel. "center" akan membuat
-          elemen berada di tengah secara vertikal.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>width:</strong>
-        <p>
-          Mengatur lebar elemen, bisa menggunakan persentase atau satuan piksel
-          (px).
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>border-radius:</strong>
-        <p>
-          Membuat sudut elemen melengkung. Semakin besar nilainya, semakin
-          melengkung sudut elemen.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>box-shadow:</strong>
-        <p>
-          Memberikan efek bayangan pada elemen. Parameter pertama adalah
-          horizontal offset, yang kedua vertical offset, dan yang ketiga adalah
-          tingkat blur.
-        </p>
-      </div>
-
-      <!-- Penjelasan tag HTML -->
-      <div class="info-box">
-        <strong>&lt;form&gt;:</strong>
-        <p>
-          Mendefinisikan form untuk mengumpulkan input pengguna. Atribut
-          <code>action</code> menentukan URL pengolahan data.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>&lt;input&gt;:</strong>
-        <p>
-          Menghasilkan elemen interaktif untuk pengambilan input pengguna. Tipe
-          input seperti <code>text</code> dan <code>password</code> digunakan
-          untuk menerima data yang sesuai.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>&lt;label&gt;:</strong>
-        <p>
-          Mendefinisikan label untuk elemen form. Atribut
-          <code>for</code> mengaitkan label dengan input yang sesuai.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>&lt;button&gt;:</strong>
-        <p>
-          Digunakan untuk membuat tombol dalam form. Tombol dapat digunakan
-          untuk melakukan aksi tertentu seperti mengirimkan form.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <strong>&lt;div&gt;:</strong>
-        <p>
-          Elemen kontainer umum yang dapat digunakan untuk mengelompokkan elemen
-          lain, sering digunakan dengan CSS untuk pengaturan tata letak.
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&lt;div class="form-group"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="username"&gt;Username:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="username"
+          name="username" required /&gt;<br />
+          &nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="form-group"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="password"&gt;Password:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="password" id="password"
+          name="password" required /&gt;<br />
+          &nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;button type="submit"&gt;Login&lt;/button&gt;<br />
+          &nbsp;&nbsp;&lt;button type="reset"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&lt;button type="button"
+          onclick="window.location.href='register.html';"&gt;Register&lt;/button&gt;<br />
+          &lt;/form&gt;
         </p>
       </div>
     </div>
+
+
+  <!-- --------------- FOOTER --------------- -->
+    <footer>
+      <div class="top-footer">
+        <p>Siti Zulekha</p>
+      </div>
+      <div class="middle-footer">
+        <ul class="footer-menu">
+          <li class="footer_menu_list">
+            <a href="#home">Tutorial</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#about">About</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#projects">Projects</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-social-icons">
+        <div class="icon">
+          <a
+            href="https://www.instagram.com/sitizulekha27/profilecard/?igsh=MTR5bm1kMWE2dzdwZg=/"
+            target="_blank"
+          >
+            <i class="uil uil-instagram"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a
+            href="https://www.linkedin.com/in/siti-zulekha-17a652300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app/"
+            target="_blank"
+          >
+            <i class="uil uil-linkedin-alt"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://github.com/Chocoloco27" target="_blank">
+            <i class="uil uil-github-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          Copyright &copy;
+          <a href="#home" style="text-decoration: none">Ekha</a> - All rights
+          reserved
+        </p>
+      </div>
+    </footer>
+  </div>
+   <!-- ----- TYPING JS Link ----- -->
+   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+   <!-- ----- SCROLL REVEAL JS Link----- -->
+   <script src="https://unpkg.com/scrollreveal"></script>
+
+   <!-- ----- MAIN JS ----- -->
+   <script src="assets/js/main.js"></script>
   </body>
 </html>
+

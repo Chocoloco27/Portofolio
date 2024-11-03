@@ -13,24 +13,40 @@
     <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>Tutorial Membuat Tabel</title>
+    <title>Tutorial Membuat Tabel & Portfolio</title>
     <style>
+      .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center; /* Agar tabel berada di tengah */
+}
+
+table {
+  width: 90%; /* Sesuaikan persentase sesuai kebutuhan Anda */
+  max-width: 800px; /* Maksimal lebar tabel */
+  border-collapse: collapse;
+}
+
       /* Styling untuk tabel */
       h2 {
         text-align: center;
-        padding-top: 30px;
+        padding-top: 110px;
         color: #a57e66;
+        
       }
       h3 {
         text-align: center;
+        margin-top: 20px;
+    padding: 10px;
       }
-      h4{
+      h4 {
         color: #a57e66;
-        padding-left: 20px; /* Menambahkan padding kiri pada container */
+        padding-left: 100px;
       }
       .table-responsive {
         width: 100%;
-        overflow-x: auto; /* Tambahkan scrolling horizontal */
+        overflow-x: auto;
       }
       table {
         width: 100%;
@@ -44,6 +60,7 @@
       }
       th {
         background-color: #c5705d;
+        color: #fff;
       }
 
       /* Styling untuk tutorial section */
@@ -54,228 +71,270 @@
         justify-content: center;
         padding: 20px;
       }
-
       .step-box {
         background-color: #dfd3c3;
         padding: 20px;
         border-radius: 8px;
-        width: 100%; /* Full width on small screens */
-        max-width: 250px; /* Limit max width */
+        max-width: 250px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
       }
-
       .step-box:hover {
         transform: translateY(-10px);
       }
-
       p {
         margin: 0;
         color: #333;
       }
-
       strong {
         color: #c5705d;
       }
-
       em {
         font-style: italic;
       }
 
       /* Styling untuk kotak scrollable */
       .scroll-box {
-        width: 100%; /* Full width on small screens */
-        max-width: 600px; /* Limit max width */
+        width: 100%;
+        max-width: 600px;
         height: 250px;
         border: 1px solid #ceae98;
         padding: 10px;
         background-color: #dfd3c3;
         overflow-y: auto;
-        margin-left: 100px; /* Menambahkan margin kiri */
+        margin: 20px auto;
       }
 
       /* Responsif untuk tampilan layar kecil */
       @media (max-width: 600px) {
         .step-box {
-          max-width: 90%; /* Lebar maksimum untuk layar kecil */
+          max-width: 90%;
+        }
+        th,
+        td {
+          font-size: 0.9rem;
+          padding: 6px;
         }
       }
-
     </style>
   </head>
   <body>
+    <!-- --------------- HEADER --------------- -->
+    <div class="container">
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tabel</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#about" class="nav-link">About</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#projects" class="nav-link">Projects</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <a
+            href="https://drive.google.com/uc?export=download&id=1WeiEiYqduCYh0tH2Y-249y_x9rO--Rtx"
+          >
+            <button class="btn">
+              Download CV <i class="uil uil-file-alt"></i>
+            </button>
+          </a>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+    </div>
+
     <h2>Tutorial Membuat Tabel HTML</h2>
     <h3>Berikut ini merupakan contoh tabel yang akan kita buat</h3>
-    <br></br>
+    <br />
 
-    <!-- Membuat tabel sederhana -->
-    <table>
-      <thead>
-        <tr>
-          <!-- Header tabel: menggunakan <th> -->
-          <th>NIM</th>
-          <th>Nama</th>
-          <th>IP Semester 1</th>
-          <th>IP Semester 2</th>
-          <th>IP Semester 3</th>
-          <th>IP Semester 4</th>
-          <th>IP Semester 5</th>
-          <th>IP Semester 6</th>
-          <th>IP Semester 7</th>
-          <th>IP Semester 8</th>
-          <th>Jurusan</th>
-          <th>Fakultas</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <!-- Isi tabel : menggunakan <td> -->
-          <td>12345678</td>
-          <td>Siti Zulekha</td>
-          <td>3.8</td>
-          <td>3.9</td>
-          <td>3.7</td>
-          <td>3.8</td>
-          <td>3.9</td>
-          <td>3.85</td>
-          <td>3.9</td>
-          <td>3.88</td>
-          <td>Sistem Informasi</td>
-          <td>Fakultas Sains dan Teknologi</td>
-        </tr>
-        <tr>
-          <td>87654321</td>
-          <td>Ahmad Fauzi</td>
-          <td>3.5</td>
-          <td>3.6</td>
-          <td>3.7</td>
-          <td>3.6</td>
-          <td>3.7</td>
-          <td>3.8</td>
-          <td>3.75</td>
-          <td>3.77</td>
-          <td>Teknik Informatika</td>
-          <td>Fakultas Teknik</td>
-        </tr>
-      </tbody>
-    </table>
-    <br></br>
+    <!-- Membuat tabel responsif -->
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>IP Semester 1</th>
+            <th>IP Semester 2</th>
+            <th>IP Semester 3</th>
+            <th>IP Semester 4</th>
+            <th>IP Semester 5</th>
+            <th>IP Semester 6</th>
+            <th>IP Semester 7</th>
+            <th>IP Semester 8</th>
+            <th>Jurusan</th>
+            <th>Fakultas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12345678</td>
+            <td>Siti Zulekha</td>
+            <td>3.8</td>
+            <td>3.9</td>
+            <td>3.7</td>
+            <td>3.8</td>
+            <td>3.9</td>
+            <td>3.85</td>
+            <td>3.9</td>
+            <td>3.88</td>
+            <td>Sistem Informasi</td>
+            <td>Fakultas Sains dan Teknologi</td>
+          </tr>
+          <tr>
+            <td>87654321</td>
+            <td>Ahmad Fauzi</td>
+            <td>3.5</td>
+            <td>3.6</td>
+            <td>3.7</td>
+            <td>3.6</td>
+            <td>3.7</td>
+            <td>3.8</td>
+            <td>3.75</td>
+            <td>3.77</td>
+            <td>Teknik Informatika</td>
+            <td>Fakultas Teknik</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+
     <h4>Penjelasan Syntax CSS dan Tag HTML pada Tabel:</h4>
-
-    <!--Tutorial Section-->
     <div class="steps-container">
       <div class="step-box animate">
-        <p><strong>border-collapse:</strong> Menghilangkan spasi antar garis sel agar lebih rapi.</p>
+        <p>
+          <strong>&lt;table&gt;:</strong> Tag ini digunakan untuk mendefinisikan
+          tabel di HTML. Semua elemen tabel, termasuk baris dan sel, harus
+          berada di dalam tag ini.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>background-color:</strong> Memberi warna latar belakang untuk membedakan bagian header dan isi tabel.</p>
+        <p>
+          <strong>&lt;thead&gt;:</strong> Tag ini digunakan untuk mengelompokkan
+          bagian header dari tabel, yang biasanya berisi judul kolom.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>padding:</strong> Memberikan ruang di dalam sel agar teks tidak terlalu menempel dengan border.</p>
+        <p>
+          <strong>&lt;th&gt;:</strong> Tag ini digunakan untuk mendefinisikan
+          sel header dalam tabel. Teks di dalam tag ini biasanya akan dicetak
+          tebal dan dipusatkan secara default.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>text-align:</strong> Mengatur posisi teks, misalnya <em>center</em> agar semua isi tabel berada di tengah.</p>
+        <p>
+          <strong>&lt;tbody&gt;:</strong> Tag ini digunakan untuk mengelompokkan
+          konten utama tabel, yaitu data yang ditampilkan dalam bentuk baris dan
+          kolom.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>&lt;table&gt;</strong> - Elemen utama untuk membuat sebuah tabel di HTML. Semua baris dan kolom tabel ditempatkan di dalam elemen ini.</p>
+        <p>
+          <strong>&lt;tr&gt;:</strong> Tag ini digunakan untuk mendefinisikan
+          baris dalam tabel. Baik dalam bagian header (&lt;thead&gt;) maupun
+          konten (&lt;tbody&gt;), baris-baris data didefinisikan dengan tag ini.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>&lt;thead&gt;</strong> - Elemen ini digunakan untuk mendefinisikan bagian kepala atau header dari tabel. Biasanya berisi judul kolom yang diletakkan di bagian atas tabel.</p>
+        <p>
+          <strong>&lt;td&gt;:</strong> Tag ini digunakan untuk mendefinisikan
+          sel data dalam baris tabel. Ini adalah tempat Anda akan menempatkan
+          nilai atau informasi.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>&lt;tbody&gt;</strong> - Elemen ini digunakan untuk menampung isi tabel atau konten utama. Data yang ada di dalam tabel ditempatkan di dalam elemen (tbody).</p>
+        <p>
+          <strong>border-collapse:</strong> Mengatur cara batas antar sel
+          ditampilkan. Nilai <em>collapse</em> akan membuat batas-batas sel
+          saling menyatu, memberikan tampilan yang lebih bersih.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>&lt;th&gt;</strong> - Elemen ini digunakan untuk membuat header (judul) di kolom tabel. Teks yang diletakkan di dalam elemen (th) secara default ditampilkan dengan teks tebal dan di tengah-tengah sel.</p>
+        <p>
+          <strong>padding:</strong> Menambahkan ruang di dalam sel antara isi
+          sel dan batas sel. Ini memberikan sedikit jarak agar informasi lebih
+          mudah dibaca.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>&lt;tr&gt;</strong> - Digunakan untuk mendefinisikan satu baris dalam tabel. Setiap baris di dalam tabel ditempatkan di dalam elemen tr.</p>
+        <p>
+          <strong>text-align:</strong> Mengatur perataan teks dalam sel. Nilai
+          <em>left</em> membuat teks diratakan ke kiri.
+        </p>
       </div>
       <div class="step-box animate">
-        <p><strong>&lt;td&gt;</strong> - Elemen ini digunakan untuk mendefinisikan satu sel data di dalam tabel. Setiap data dalam tabel ditempatkan di dalam elemen (td). Ini adalah elemen yang berisi konten data pada setiap baris tabel.</p>
+        <p>
+          <strong>background-color:</strong> Mengatur warna latar belakang sel
+          header untuk membuatnya lebih menonjol dibandingkan sel biasa.
+        </p>
       </div>
     </div>
-    <br></br>
-    <h4>Berikut Ini syntax Html yang bisa anda coba:</h4>
 
-    <!--Scroll Box-->
-    <br></br>
+    <br />
+    <h4>Berikut Ini syntax Html yang bisa anda coba:</h4>
     <div class="scroll-box">
       <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="UTF-8" /&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
     &lt;title&gt;Tutorial Membuat Table&lt;/title&gt;
     &lt;style&gt;
       /*Styling untuk tabel*/
       table {
         width: 100%;
-        border-collapse: collapse; /* Menggabungkan border antara sel */
+        border-collapse: collapse;
       }
-      th,
-      td {
-        border: 1px solid black; /* Menambahkan border pada setiap sel */
+      th, td {
+        border: 1px solid black;
         padding: 8px;
-        text-align: left; /* Menyelaraskan teks ke kiri */
+        text-align: left;
       }
       th {
-        background-color: #2db7e5; /* Memberikan warna latar pada header tabel */
+        background-color: #2db7e5;
       }
     &lt;/style&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;h2&gt;Tutorial Membuat Tabel HTML&lt;/h2&gt;
-
-    &lt;!-- Membuat tabel sederhana --&gt;
     &lt;table&gt;
       &lt;thead&gt;
         &lt;tr&gt;
-          &lt;!-- Header tabel: menggunakan &lt;th&gt; --&gt;
           &lt;th&gt;NIM&lt;/th&gt;
           &lt;th&gt;Nama&lt;/th&gt;
           &lt;th&gt;IPK Semester 1&lt;/th&gt;
           &lt;th&gt;IPK Semester 2&lt;/th&gt;
-          &lt;th&gt;IPK Semester 3&lt;/th&gt;
-          &lt;th&gt;IPK Semester 4&lt;/th&gt;
-          &lt;th&gt;IPK Semester 5&lt;/th&gt;
-          &lt;th&gt;IPK Semester 6&lt;/th&gt;
-          &lt;th&gt;IPK Semester 7&lt;/th&gt;
-          &lt;th&gt;IPK Semester 8&lt;/th&gt;
-          &lt;th&gt;Jurusan&lt;/th&gt;
-          &lt;th&gt;Fakultas&lt;/th&gt;
         &lt;/tr&gt;
       &lt;/thead&gt;
       &lt;tbody&gt;
         &lt;tr&gt;
-          &lt;!-- Isi tabel : menggunakan &lt;td&gt; --&gt;
           &lt;td&gt;12345678&lt;/td&gt;
           &lt;td&gt;Siti Zulekha&lt;/td&gt;
           &lt;td&gt;3.8&lt;/td&gt;
           &lt;td&gt;3.9&lt;/td&gt;
-          &lt;td&gt;3.7&lt;/td&gt;
-          &lt;td&gt;3.8&lt;/td&gt;
-          &lt;td&gt;3.9&lt;/td&gt;
-          &lt;td&gt;3.85&lt;/td&gt;
-          &lt;td&gt;3.9&lt;/td&gt;
-          &lt;td&gt;3.88&lt;/td&gt;
-          &lt;td&gt;Sistem Informasi&lt;/td&gt;
-          &lt;td&gt;Fakultas Sains dan Teknologi&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;87654321&lt;/td&gt;
-          &lt;td&gt;Ahmad Fauzi&lt;/td&gt;
-          &lt;td&gt;3.5&lt;/td&gt;
-          &lt;td&gt;3.6&lt;/td&gt;
-          &lt;td&gt;3.7&lt;/td&gt;
-          &lt;td&gt;3.6&lt;/td&gt;
-          &lt;td&gt;3.7&lt;/td&gt;
-          &lt;td&gt;3.8&lt;/td&gt;
-          &lt;td&gt;3.75&lt;/td&gt;
-          &lt;td&gt;3.77&lt;/td&gt;
-          &lt;td&gt;Teknik Informatika&lt;/td&gt;
-          &lt;td&gt;Fakultas Teknik&lt;/td&gt;
         &lt;/tr&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
@@ -283,5 +342,67 @@
 &lt;/html&gt;
       </code></pre>
     </div>
-</body>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+      <div class="top-footer">
+        <p>Siti Zulekha</p>
+      </div>
+      <div class="middle-footer">
+        <ul class="footer-menu">
+          <li class="footer_menu_list">
+            <a href="#home">Tutorial</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#about">About</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#projects">Projects</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-social-icons">
+        <div class="icon">
+          <a
+            href="https://www.instagram.com/sitizulekha27/profilecard/?igsh=MTR5bm1kMWE2dzdwZg=/"
+            target="_blank"
+          >
+            <i class="uil uil-instagram"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a
+            href="https://www.linkedin.com/in/siti-zulekha-17a652300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app/"
+            target="_blank"
+          >
+            <i class="uil uil-linkedin-alt"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://github.com/Chocoloco27" target="_blank">
+            <i class="uil uil-github-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          Copyright &copy;
+          <a href="#home" style="text-decoration: none">Ekha</a> - All rights
+          reserved
+        </p>
+      </div>
+    </footer>
+  </div>
+   <!-- ----- TYPING JS Link ----- -->
+   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+   <!-- ----- SCROLL REVEAL JS Link----- -->
+   <script src="https://unpkg.com/scrollreveal"></script>
+
+   <!-- ----- MAIN JS ----- -->
+   <script src="assets/js/main.js"></script>
+  </body>
 </html>

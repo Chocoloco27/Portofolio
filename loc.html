@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
     <title>Geolocation API</title>
     <style>
       /* Body styling */
@@ -47,7 +56,7 @@
       }
 
       button:hover {
-        background-color: #0056b3;
+        background-color: #b15945;
       }
 
       /* Location result box */
@@ -63,13 +72,28 @@
       h3 {
         margin-bottom: 10px;
         font-size: 20px;
-        color: #007bff;
+        color: #c5705d;
       }
 
       p {
         font-size: 16px;
         color: #555;
         margin: 5px 0;
+      }
+
+      /* Tutorial scroll box */
+      #tutorial {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        max-height: 150px; /* Limit the height */
+        overflow-y: auto; /* Add vertical scroll */
+        font-family: monospace;
+        text-align: left;
+        white-space: pre-wrap; /* Preserve line breaks */
+        color: #333;
       }
     </style>
   </head>
@@ -83,6 +107,36 @@
         <p>Latitude: <span id="latitude"></span></p>
         <p>Longitude: <span id="longitude"></span></p>
         <p>Accuracy: <span id="accuracy"></span> meters</p>
+      </div>
+
+      <div id="tutorial">
+        <h3>Syntax API Geolocation:</h3>
+        <code>
+          &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt; &lt;meta
+          charset="UTF-8"&gt; &lt;meta name="viewport"
+          content="width=device-width, initial-scale=1.0"&gt;
+          &lt;title&gt;Geolocation API&lt;/title&gt; ... &lt;script&gt; //
+          Function to get user location function getLocation() { const
+          locationBox = document.getElementById("location"); if
+          (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError); }
+          else { alert("Geolocation is not supported by this browser."); } } //
+          Function to display position function showPosition(position) {
+          document.getElementById("latitude").innerHTML =
+          position.coords.latitude;
+          document.getElementById("longitude").innerHTML =
+          position.coords.longitude;
+          document.getElementById("accuracy").innerHTML =
+          position.coords.accuracy + " meters";
+          document.getElementById("location").style.display = "block"; } //
+          Function to handle errors function showError(error) { switch
+          (error.code) { case error.PERMISSION_DENIED: alert("User denied the
+          request for Geolocation."); break; case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable."); break; case
+          error.TIMEOUT: alert("The request to get user location timed out.");
+          break; case error.UNKNOWN_ERROR: alert("An unknown error occurred.");
+          break; } } &lt;/script&gt; &lt;/head&gt; &lt;/html&gt;
+        </code>
       </div>
     </div>
 
@@ -100,7 +154,7 @@
         const button = document.querySelector("button");
         button.innerHTML = "Getting Location...";
         button.disabled = true;
-        button.style.backgroundColor = "#ccc";
+        button.style.backgroundColor = "#ceae98";
       }
 
       // Function to display position
@@ -120,7 +174,7 @@
         const button = document.querySelector("button");
         button.innerHTML = "Get Location";
         button.disabled = false;
-        button.style.backgroundColor = "#007bff";
+        button.style.backgroundColor = "#b15945";
       }
 
       // Function to handle errors
@@ -144,7 +198,7 @@
         const button = document.querySelector("button");
         button.innerHTML = "Get Location";
         button.disabled = false;
-        button.style.backgroundColor = "#007bff";
+        button.style.backgroundColor = "#c5705d";
       }
     </script>
   </body>

@@ -4,7 +4,7 @@
 /* ----- VARIABLES ----- */
 :root {
   /* Background and Primary Colors */
-  --body-color: #f8ede3; /* Hitam abu-abu pekat untuk latar belakang, memberikan kesan elegan dan profesional */
+  --body-color: #faf3ec; /* Hitam abu-abu pekat untuk latar belakang, memberikan kesan elegan dan profesional */
   --color-white: #dfd3c3; /* Putih keabu-abuan yang lembut untuk mengurangi kontras yang terlalu tajam */
 
   /* Text Colors */
@@ -503,7 +503,7 @@ textarea {
   color: var(--color-white);
 }
 .form-button > .btn:hover {
-  background: #00b5e7;
+  background: #b15945;
 }
 .form-button i {
   font-size: 18px;
