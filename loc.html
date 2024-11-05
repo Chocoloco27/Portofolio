@@ -16,12 +16,11 @@
     <style>
       /* Body styling */
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f8ede3;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         height: 100vh;
       }
@@ -35,6 +34,7 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         max-width: 500px;
         width: 100%;
+        margin-top: 200px;
       }
 
       h1 {
@@ -55,6 +55,21 @@
         transition: background-color 0.3s ease;
       }
 
+      /* Button Download */
+      .nav-button .btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #efefef;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .nav-button .btn:hover {
+        background-color: #a0574b;
+        color: rgb(255, 255, 255);
+      }
+
       button:hover {
         background-color: #b15945;
       }
@@ -64,7 +79,7 @@
         margin-top: 20px;
         padding: 20px;
         border-radius: 15px;
-        background-color: #e9f7f9;
+        background-color: #faf3ec;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         display: none;
       }
@@ -95,9 +110,93 @@
         white-space: pre-wrap; /* Preserve line breaks */
         color: #333;
       }
+
+      .wrapper {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        max-width: 500px;
+        width: 100%;
+        text-align: left;
+        font-family: monospace;
+        color: #333;
+        overflow-y: auto;
+      }
+
+      .wrapper h2 {
+        color: #c5705d;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .wrapper h3 {
+        font-size: 16px;
+        color: #333;
+        margin: 10px 0;
+      }
+
+      .wrapper p {
+        font-size: 14px;
+        color: #555;
+        margin: 5px 0;
+      }
+
+      .wrapper pre {
+        background-color: #f8f8f8;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        overflow-x: auto;
+      }
     </style>
   </head>
   <body>
+    <!-- --------------- HEADER --------------- -->
+    <nav id="header">
+      <div class="nav-logo">
+        <p class="nav-name">Geolocation</p>
+        <span>.</span>
+      </div>
+      <div class="nav-menu" id="myNavMenu">
+        <ul class="nav_menu_list">
+          <li class="nav_list">
+            <a href="index.html" class="nav-link active-link">Home</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="form.html" class="nav-link">Tutorial</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="loc.html" class="nav-link">Form</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="table.html" class="nav-link">Tabel</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="kanvas.html" class="nav-link">Canvas</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="deploy.html" class="nav-link">Deploy</a>
+            <div class="circle"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <button class="btn">
+          Download CV <i class="uil uil-file-alt"></i>
+        </button>
+      </div>
+      <div class="nav-menu-btn">
+        <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+      </div>
+    </nav>
+
     <div class="container">
       <h1>Get User Location with Geolocation API</h1>
       <button onclick="getLocation()">Get Location</button>
@@ -108,37 +207,69 @@
         <p>Longitude: <span id="longitude"></span></p>
         <p>Accuracy: <span id="accuracy"></span> meters</p>
       </div>
-
-      <div id="tutorial">
-        <h3>Syntax API Geolocation:</h3>
-        <code>
-          &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt; &lt;meta
-          charset="UTF-8"&gt; &lt;meta name="viewport"
-          content="width=device-width, initial-scale=1.0"&gt;
-          &lt;title&gt;Geolocation API&lt;/title&gt; ... &lt;script&gt; //
-          Function to get user location function getLocation() { const
-          locationBox = document.getElementById("location"); if
-          (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition, showError); }
-          else { alert("Geolocation is not supported by this browser."); } } //
-          Function to display position function showPosition(position) {
-          document.getElementById("latitude").innerHTML =
-          position.coords.latitude;
-          document.getElementById("longitude").innerHTML =
-          position.coords.longitude;
-          document.getElementById("accuracy").innerHTML =
-          position.coords.accuracy + " meters";
-          document.getElementById("location").style.display = "block"; } //
-          Function to handle errors function showError(error) { switch
-          (error.code) { case error.PERMISSION_DENIED: alert("User denied the
-          request for Geolocation."); break; case error.POSITION_UNAVAILABLE:
-          alert("Location information is unavailable."); break; case
-          error.TIMEOUT: alert("The request to get user location timed out.");
-          break; case error.UNKNOWN_ERROR: alert("An unknown error occurred.");
-          break; } } &lt;/script&gt; &lt;/head&gt; &lt;/html&gt;
-        </code>
-      </div>
     </div>
+
+    <main class="wrapper">
+      <h2>Cara Menggunakan Geolocation API</h2>
+      <p>
+        Geolocation API memungkinkan Anda untuk mengakses lokasi pengguna dengan
+        izin mereka. Berikut ini adalah langkah-langkah untuk memulai:
+      </p>
+
+      <h3>Langkah 1: Cek Dukungan Geolocation</h3>
+      <p>
+        Gunakan JavaScript untuk memastikan bahwa browser mendukung Geolocation
+        API.
+      </p>
+      <pre><code>if (navigator.geolocation) {
+  // Geolocation didukung oleh browser
+}</code></pre>
+
+      <h3>Langkah 2: Mendapatkan Lokasi Pengguna</h3>
+      <p>
+        Untuk mendapatkan lokasi saat ini, gunakan metode
+        <code>getCurrentPosition</code>, yang memerlukan dua fungsi callback:
+        satu untuk keberhasilan dan satu lagi untuk menangani error.
+      </p>
+      <pre><code>navigator.geolocation.getCurrentPosition(successCallback, errorCallback);</code></pre>
+
+      <h3>Langkah 3: Menampilkan Data Lokasi</h3>
+      <p>
+        Di dalam <code>successCallback</code>, Anda bisa mengakses latitude,
+        longitude, dan tingkat akurasi lokasi pengguna.
+      </p>
+      <pre><code>function successCallback(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  const accuracy = position.coords.accuracy;
+  console.log('Latitude:', latitude);
+  console.log('Longitude:', longitude);
+  console.log('Akurasi:', accuracy);
+}</code></pre>
+
+      <h3>Langkah 4: Menangani Error</h3>
+      <p>
+        Jika ada masalah (seperti penolakan pengguna atau lokasi tidak
+        tersedia), <code>errorCallback</code> akan memberikan kode error
+        tertentu.
+      </p>
+      <pre><code>function errorCallback(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      console.log("Pengguna menolak permintaan untuk Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      console.log("Informasi lokasi tidak tersedia.");
+      break;
+    case error.TIMEOUT:
+      console.log("Permintaan lokasi melebihi waktu yang ditentukan.");
+      break;
+    case error.UNKNOWN_ERROR:
+      console.log("Terjadi kesalahan yang tidak diketahui.");
+      break;
+  }
+}</code></pre>
+    </main>
 
     <script>
       // Function to get user location
@@ -151,7 +282,9 @@
         }
 
         // Add loading effect to the button
-        const button = document.querySelector("button");
+        const button = document.querySelector(
+          "button[onclick='getLocation()']"
+        );
         button.innerHTML = "Getting Location...";
         button.disabled = true;
         button.style.backgroundColor = "#ceae98";
@@ -171,7 +304,9 @@
         locationBox.style.display = "block";
 
         // Revert button state
-        const button = document.querySelector("button");
+        const button = document.querySelector(
+          "button[onclick='getLocation()']"
+        );
         button.innerHTML = "Get Location";
         button.disabled = false;
         button.style.backgroundColor = "#b15945";
@@ -195,7 +330,9 @@
         }
 
         // Revert button state even in case of an error
-        const button = document.querySelector("button");
+        const button = document.querySelector(
+          "button[onclick='getLocation()']"
+        );
         button.innerHTML = "Get Location";
         button.disabled = false;
         button.style.backgroundColor = "#c5705d";

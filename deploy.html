@@ -1,0 +1,293 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- --------- UNICONS ---------- -->
+  <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+  />
+  <!-- --------- CSS ---------- -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- --------- FAVICON ---------- -->
+  <link
+    rel="shortcut icon"
+    href="assets/images/favicon.png"
+    type="image/x-icon"
+  />
+  <title>Tutorial GitHub Pages</title>
+  <style>
+    .conta {
+      max-width: 800px;
+      width: 95%;
+      margin-top: 5%;
+      margin-left: 15%;
+      margin-right: 20%;
+      
+    }
+    .wrapper {
+      padding-top: 60px; /* Menambahkan padding atas untuk memberi ruang */
+    }
+    h2 {
+      color: #333;
+    }
+    h3 {
+      color: #555;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    p,
+    li {
+      color: #555;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    .tutorial-content {
+      background: #dfd3c3;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 15px;
+      align-items: center;
+    }
+    .code-section {
+      background: #eaeaea;
+      border-left: 4px solid #a57e66;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+    .code-card {
+      white-space: pre-wrap;
+    }
+    a {
+      color: #a57e66;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    b {
+      font-weight: bold;
+    }
+      .header h1 {
+        font-weight: 600;
+        color: #ceae98;
+        margin-top: 20px;
+        text-align: center;
+      }
+       /* Responsif untuk tampilan layar kecil */
+       @media (max-width: 600px) {
+        .step-box {
+          max-width: 90%;
+        }
+        th,
+        td {
+          font-size: 0.9rem;
+          padding: 6px;
+        }
+      }
+  </style>
+</head>
+
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Deploy</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link active-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="loc.html" class="nav-link">API</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="table.html" class="nav-link">Tabel</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="kanvas.html" class="nav-link">Canvas</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Form</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn">
+            Download CV <i class="uil uil-file-alt"></i>
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+      <main class="wrapper">
+        <section class="section" id="tutorials">
+            <div class="header">
+                <h1>Tutorial Deployment ke Github</h1>
+              </div>
+
+        <div class="conta">
+          <section class="tutorial-content">
+            <h2>Langkah 1: Buat Repositori GitHub</h2>
+            <p>
+              1. Buka
+              <a href="https://github.com" target="_blank">GitHub</a> dan login
+              ke akun Anda.
+            </p>
+            <p>2. Klik tombol <b>New</b> untuk membuat repositori baru.</p>
+            <p>
+              3. Berikan nama repositori (misalnya
+              <code>my-tutorial-website</code>).
+            </p>
+            <p>
+              4. Setel repositori ke <b>Public</b> dan klik
+              <b>Create repository</b>.
+            </p>
+          </section>
+
+          <section class="tutorial-content">
+            <h2>Langkah 2: Upload Kode Website Anda ke Repositori</h2>
+            <p>Ada dua cara untuk mengunggah file:</p>
+            <ul>
+              <li><b>Upload langsung di GitHub:</b></li>
+              <p>
+                1. Di dalam repositori baru, klik <b>Add file</b> &gt;
+                <b>Upload files</b>.
+              </p>
+              <p>
+                2. Seret dan jatuhkan file HTML, CSS, JavaScript, dan gambar
+                Anda ke dalam repositori.
+              </p>
+              <p>
+                3. Setelah selesai, klik <b>Commit changes</b> untuk mengunggah
+                file.
+              </p>
+              <li><b>Upload menggunakan Git di terminal:</b></li>
+              <p>1. Buka terminal dan arahkan ke direktori proyek Anda.</p>
+              <p>
+                2. Jalankan perintah berikut untuk menginisialisasi Git,
+                menambahkan file, dan mendorongnya ke GitHub:
+              </p>
+              <div class="code-section">
+                <div class="code-card">
+                  git init<br />
+                  git add .<br />
+                  git commit -m "Initial commit"<br />
+                  git branch -M main<br />
+                  git remote add origin
+                  https://github.com/username/my-tutorial-website.git<br />
+                  git push -u origin main
+                </div>
+              </div>
+            </ul>
+          </section>
+
+          <section class="tutorial-content">
+            <h2>Langkah 3: Aktifkan GitHub Pages</h2>
+            <p>1. Buka tab <b>Settings</b> di repositori GitHub Anda.</p>
+            <p>2. Gulir ke bawah ke bagian <b>GitHub Pages</b>.</p>
+            <p>
+              3. Pada opsi <b>Source</b>, pilih <code>main</code> dan folder
+              <code>/ (root)</code>.
+            </p>
+            <p>4. Klik <b>Save</b>.</p>
+            <p>
+              Setelah itu, URL untuk website Anda akan terlihat di bagian GitHub
+              Pages. URL biasanya seperti
+              <code>https://username.github.io/my-tutorial-website</code>.
+            </p>
+          </section>
+
+          <section class="tutorial-content">
+            <h2>Langkah 4: Cek Website Anda</h2>
+            <p>
+              Buka URL yang dihasilkan untuk melihat website Anda yang sudah
+              online!
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <!-- --------------- FOOTER --------------- -->
+      <footer>
+        <div class="top-footer">
+          <p>Siti Zulekha</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="#home">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+            <a
+              href="https://www.instagram.com/sitizulekha27/profilecard/?igsh=MTR5bm1kMWE2dzdwZg=/"
+              target="_blank"
+            >
+              <i class="uil uil-instagram"></i>
+            </a>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/siti-zulekha-17a652300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app/"
+              target="_blank"
+            >
+              <i class="uil uil-linkedin-alt"></i>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://github.com/Chocoloco27" target="_blank">
+              <i class="uil uil-github-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Ekha</a> - All rights
+            reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
